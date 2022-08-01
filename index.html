@@ -78,6 +78,12 @@
         // config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
         songs: [
             {
+                name: "Dang dở",
+                singer: "Nal, CT",
+                path: "https://zingmp3.vn/bai-hat/Dang-Do-Nal-CT/ZZEEOCFZ.html",
+                image: "https://1.bp.blogspot.com/-kX21dGUuTdM/X85ij1SBeEI/AAAAAAAAKK4/feboCtDKkls19cZw3glZWRdJ6J8alCm-gCNcBGAsYHQ/s16000/Tu%2BAana%2BPhir%2BSe%2BRap%2BSong%2BLyrics%2BBy%2BRaftaar.jpg"
+            },
+            /*{
                 name: "",
                 singer: "",
                 path: "",
@@ -124,13 +130,7 @@
                 singer: "",
                 path: "",
                 image: ""
-            },
-            {
-                name: "",
-                singer: "",
-                path: "",
-                image: ""
-            }
+            }*/
         ],
         setConfig: function (key, value){
             this.config[key] = value;
@@ -155,7 +155,7 @@
         defineProperties: function (){
             Object.defineProperty(this, "currentSong", {
                 get: function () {
-                    return this.songs.[this.currentIndex];
+                    return this.songs[this.currentIndex];
                 }
             });
         },
@@ -164,10 +164,10 @@
             const cdWidth = cd.offsetWidth;
 
             // Xử lý CD quay/ dừng
-            const cdThumbAnimate = cdThumb.animate([{transform: "rotate(360deg)"}], {
+            const cdThumbAnimate = cdThumb.animate([{ transform: "rotate(360deg)" }], {
                 duration: 10000, // 10 seconds
                 iterations: Infinity
-            });
+              });
             cdThumbAnimate.pause();
 
             // Xử lý phóng to thu nhỏ CD quay
